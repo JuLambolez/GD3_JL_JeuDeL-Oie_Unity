@@ -7,6 +7,11 @@ Evidemment, il n'y a pas qu'un seul détenu en lice mais bien 4 et tout les coup
 
 - acheter des outils au "marché noir" en de pièces récupérés lors de mini-jeux ou sur des cases (des objets utilitaires pour avancer de plus de cases, des pièges pour bloquer ou ralentir la progression, des outils pour attaquer un autre détenu...). Ce "marché noir" a des emplacements fixes un peu partout sur le "circuit" entre 2 cases, ce qui fait qu'on a pas besoin de s'arrêter pile dessus pour acheter quelque chose.
 - S'affronter dans des mini-jeux pour gagner de l'argent (dont un cache-cache imposé) à la fin du tour de tout les prisonniers
+- On peut avoir la chance de recevoir des "contrats" (des quêtes) des spectateurs ou d'autres détenus (pas ceux dans la course avec nous), ou de gardes.
+Ces quêtes varient et rapporteront diverses récompenses (des objets, de l'argent...) :
+- Lors du prochain mini-jeu, arriver à x position
+- Lors du prochain mini-jeu, faire en sorte que x détenu finisse dernier
+- Lors de votre tour, utiliser tel objet pour attaquer x détenu
 
 Le "circuit" est composé de différentes cases ayant des effets différents :
 

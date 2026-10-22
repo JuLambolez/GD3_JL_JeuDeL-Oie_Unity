@@ -12,7 +12,10 @@ GameObject:
   - component: {fileID: 6550707278734301876}
   - component: {fileID: 6615479621278174656}
   - component: {fileID: 5883928425300494976}
-  - component: {fileID: 1078172855735230111}
+  - component: {fileID: 4175316444201720114}
+  - component: {fileID: 1236169871189738769}
+  - component: {fileID: 8806857504029518111}
+  - component: {fileID: 1490365854292782800}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -117,7 +120,7 @@ CapsuleCollider:
   m_Height: 2
   m_Direction: 1
   m_Center: {x: 0.000000059604645, y: 0, z: -0.00000008940697}
---- !u!114 &1078172855735230111
+--- !u!114 &4175316444201720114
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -126,18 +129,60 @@ MonoBehaviour:
   m_GameObject: {fileID: 516758602468859021}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c776b4fc89fd6544fbcac5d47a6913a2, type: 3}
+  m_Script: {fileID: 11500000, guid: 183d7505c2d6ad54a93de4bb2aea5b58, type: 3}
   m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::PlayerLancerDe
-  de: {fileID: 441950989233564230}
-  texteResultat: {fileID: 9178299855989773702}
+  m_EditorClassIdentifier: Assembly-CSharp::LanceurDe
   toucheLancer: 1
-  axeRotation: {x: 1, y: 1, z: 1}
-  vitesseRotation: 540
-  dureeRalentissement: 1
-  hauteurMontee: 0.7
-  dureePop: 0.3
-  texteFaceCamera: 1
+  deAnimation: {fileID: 2197833740132149455}
+  deResultat: {fileID: 2540922100719792340}
+  affichageResultat: {fileID: 3214050624624971675}
+--- !u!114 &1236169871189738769
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 516758602468859021}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0c6020a9798a098479697128d542b2b5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::PionDeplacement
+  dureeParCase: 0.5
+  hauteurSaut: 0.3
+  decalage: {x: 0, y: 2, z: 0}
+--- !u!114 &8806857504029518111
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 516758602468859021}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bf798ed4bdf57a24ea0cec863f84824d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::JoueurPlateau
+  plateau: {fileID: 0}
+  pion: {fileID: 1236169871189738769}
+--- !u!114 &1490365854292782800
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 516758602468859021}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8f3037f83520a5c4d9edba469184c34f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::GestionnaireTour
+  lanceur: {fileID: 4175316444201720114}
+  joueur: {fileID: 8806857504029518111}
+  affichage: {fileID: 3214050624624971675}
+  plateau: {fileID: 0}
+  enchainerEffets: 0
+  maxEnchainements: 5
 --- !u!1 &5375321114941107430
 GameObject:
   m_ObjectHideFlags: 0
@@ -149,13 +194,14 @@ GameObject:
   - component: {fileID: 1410987324275035}
   - component: {fileID: 2016436075490738664}
   - component: {fileID: 9178299855989773702}
+  - component: {fileID: 3214050624624971675}
   m_Layer: 5
   m_Name: Text (TMP)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &1410987324275035
 RectTransform:
   m_ObjectHideFlags: 0
@@ -172,7 +218,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 175}
+  m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 200, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &2016436075490738664
@@ -277,6 +323,20 @@ MonoBehaviour:
   m_hasFontAssetChanged: 0
   m_baseMaterial: {fileID: 0}
   m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
+--- !u!114 &3214050624624971675
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5375321114941107430}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: edd405e85c1a6744d9034d05fc8630c9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::AffichageResultat
+  dureePop: 0.5
+  cible: {fileID: 5107272721275985573}
 --- !u!1 &7313661750892655160
 GameObject:
   m_ObjectHideFlags: 0
@@ -434,13 +494,49 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 1063966962017794818, guid: 7c538ae5374bf0942bf7955ad3c66905, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 2197833740132149455}
+    - targetCorrespondingSourceObject: {fileID: 1063966962017794818, guid: 7c538ae5374bf0942bf7955ad3c66905, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 2540922100719792340}
   m_SourcePrefab: {fileID: 100100000, guid: 7c538ae5374bf0942bf7955ad3c66905, type: 3}
 --- !u!1 &441950989233564230 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 1063966962017794818, guid: 7c538ae5374bf0942bf7955ad3c66905, type: 3}
   m_PrefabInstance: {fileID: 640030416664023364}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &2197833740132149455
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 441950989233564230}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f0d1e0a89afc6dd44b4d9e6e5d988af3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::DeAnimation
+  axeRotation: {x: 1, y: 1, z: 1}
+  vitesseRotation: 540
+  dureeRalentissement: 1.1
+  hauteurMontee: 0.8
+--- !u!114 &2540922100719792340
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 441950989233564230}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 56903ee78ffd9d348b69262991cf2c74, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::DeResultat
+  valeurMin: 1
+  valeurMax: 6
 --- !u!4 &5796781891294546525 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 6382610225550269209, guid: 7c538ae5374bf0942bf7955ad3c66905, type: 3}
